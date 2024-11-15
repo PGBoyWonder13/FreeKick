@@ -1,0 +1,28 @@
+{% extends '_layout.html' %}
+
+
+{% block title %}FreeKick | About{% endblock %}
+
+{% block body %}
+</div>
+<div class="col-md-6">
+    <div class="container part box-outline">
+        <h3 class="post-header">Behind this <span class="proj">Project</span> </h3>
+        <p class="post-details">This is a project is starting as a club for students at UNC Charlotte January 2025.
+    </div>
+    <img class=" img-fluid" src="static/imgs/26logo.png" alt="People">
+</div>
+
+
+<div class="col-md-3">
+    <div class="faq box-outline">
+        <div class="faq-container d-flex">
+        </div class="faq-content">
+        <h3 class="faq-title">FAQs</h3>
+        {% for faq_listofQuestions , faq_listofAnswers in faq_dictionary.items() %}
+        <p class="question">{{faq_listofQuestions}}</p>
+        <p class="answer">{{faq_listofAnswers}}</p>
+        {% endfor %}
+    </div>
+
+    {% endblock %}
