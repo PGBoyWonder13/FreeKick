@@ -1,7 +1,36 @@
 from flask import Flask, redirect, render_template, request, url_for
+import psycopg2
+from flask_sqlalchemy import SQLAlchemy
+from dotenv import load_dotenv
+import os
 
+
+load_dotenv()
 app = Flask(__name__)
 faq_dictionary = {}
+
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.secret_key = os.getenv('APP_SECRET_KEY')
+
+
+# Initialize SQLAlchemy
+db = SQLAlchemy(app)
+
+import psycopg2
+
+
+
+class Contact(db.Model):
+    __tablename__ = 'contacts'  # Ensure the table name matches your original schema
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(100), unique=True, nullable=False)
+    comments = db.Column(db.Text, nullable=False)
+
+    def __repr__(self):
+        return f'<Contact {self.name}>'
 
 @app.route('/')
 def index():
@@ -19,10 +48,25 @@ def signup():
     return render_template('signup.html')
 
 
-@app.route('/contact')
-def contact():
-    return render_template('contact.html', contact_active=True)
 
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        # Get the form data from the request
+        name = request.form.get('name')
+        email = request.form.get('email')
+        comments = request.form.get('comments')
+
+        # Create a new Contact instance and add it to the database
+        new_contact = Contact(name=name, email=email, comments=comments)
+
+        # Add the new contact to the session and commit
+        db.session.add(new_contact)
+        db.session.commit()
+
+        return redirect(url_for('thank_you'))
+
+    return render_template('contact.html', contact_active=True)
 
 @app.route('/about')
 def info():
@@ -39,3 +83,11 @@ def info():
 def prof():
 
     return render_template('profile.html')
+
+
+@app.route('/thank_you')
+def thank_you():
+    return render_template('thank_you.html')  # You can create a thank_you.html template
+
+if __name__ == '__main__':
+    app.run(debug=True)

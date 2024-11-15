@@ -14,26 +14,24 @@
 </div>
 <div class="col-md-6">
   <div class="rules box-outline-2">
-    <h2 class="rules-title">Want To Connect??</h2>
+    <h2 class="rules-title">Would you like to join??</h2>
     <div class="rules-info">
-      The FreeKick team is here to meet your needs by giving you access to the most immersive US 2026 World Soccer Analytics and AI experience. Please complete the form below and a team member will be in contact with you.</p>
-      <form>
+      Please complete the form below and a team member will be in contact with you.</p>
+      <form method="POST" action="{{ url_for('contact') }}">
         <div class="mb-3">
-          <label for="help_name" class="form-label"></label>Name</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div></div>
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
         </div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text"></div>
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" required>
         </div>
         <div class="mb-3">
-          <label for="floatingTextarea2">Comments</label>
-          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+            <label for="comments" class="form-label">Comments</label>
+            <textarea class="form-control" id="comments" name="comments" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+    </form>
     </div>
   </div>
 </div>
