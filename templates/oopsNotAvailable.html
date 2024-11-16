@@ -1,0 +1,32 @@
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 custom-margin text-center">
+            <p class="oops-message">Oops! Page is not available yet. Check back soon.</p>
+            <img class="img-fluid custom-height" src="static/imgs/portrait-young-sad-student-being-bullied-school.jpg" alt="People">
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Add a 2.5cm top margin and 4.5cm left margin to the container */
+    .custom-margin {
+        margin-top: 2.5cm;
+        margin-left: 4.5cm;
+    }
+
+    /* Limit the height of the image */
+    .custom-height {
+        height: 525px; /* Adjust this value as needed */
+        object-fit: cover; /* Ensures the image scales proportionally */
+    }
+
+    /* Style the "Oops" message */
+    .oops-message {
+        color: #8B4513; /* Brownish color */
+        font-size: 33px; /* Adjust text size as needed */
+        font-weight: bold;
+        margin-bottom: 15px; /* Add space between text and image */
+    }
+</style>
+{% endblock %}

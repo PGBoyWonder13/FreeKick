@@ -35,18 +35,34 @@ class Contact(db.Model):
 @app.route('/')
 def index():
 
-    return render_template('index.html', home_active=True)
+# Check if a search query exists in the request arguments
+    search_query = request.args.get('searchbar', '')
+
+    if search_query:  # If the search query is not empty
+        return render_template('oopsNotAvailable.html', search_query=search_query)
+    else:  # If no search query is provided
+        return render_template('index.html')
 
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-
+    if request.method == 'POST':
+        # Handle form submission (you can add form validation here if needed)
+        
+        # For now, just redirect to 'oopsNotAvailable.html'
+        return redirect(url_for('oops_page'))
+    
+    # Render the login page for GET request
     return render_template('login.html')
 
-@app.route('/signup')
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
+    if request.method == 'POST':
+        # Redirect to the 'oopsNotAvailable' page after form submission
+        return redirect(url_for('oops_page'))
+    
+    # Render the signup page for GET request
     return render_template('signup.html')
-
 
 
 @app.route('/contact', methods=['GET', 'POST'])
@@ -88,6 +104,12 @@ def prof():
 @app.route('/thank_you')
 def thank_you():
     return render_template('thank_you.html')  # You can create a thank_you.html template
+
+
+@app.route('/oopsNotAvailable')
+def oops_page():
+    return render_template('oopsNotAvailable.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
