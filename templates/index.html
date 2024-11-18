@@ -1,6 +1,6 @@
 {% extends '_layout.html' %}
 
-{% block title %} BYTE | Home {% endblock %}
+{% block title %} FreeKick | Home {% endblock %}
 
 {% block body %}
 </div>
@@ -24,23 +24,72 @@
         <div class="p-2 trending-post">
             <a class="inactive" href="/oopsNotAvailable">Forum</a>
         </div>   
-        
     </div>
 
-    <div class="container user-post box-outline">
-            <div class="col-12">
-                <img class="img-fluid" src="static/imgs/usworldcup.png" alt="The Future">
-            </div>
+    <div class="container user-post box-outline d-flex justify-content-center align-items-center">
+        <div class="col-12">
+            <img class="img-fluid" src="static/imgs/usworldcup.png" alt="The Future" style="width: 590px;">
+        </div>
     </div>
 </div>
 
-
 <div class="col-md-3">
     <div class="leaderboard box-outline">
-     
         <img class="img-fluid" src="static/imgs/26logo.png" alt="BYTE LOGO">
-
     </div>
+</div>
+
+<div class="container user-post-2 box-outline-5 d-flex justify-content-center align-items-center">
+    <h1> 
+        <span class="days">{{days_until}} days</span>
+        <span class="hours">{{hours_until}} hours</span>
+        <span class="and"> and </span>
+        <span class="minutes">{{minutes_until}} mins</span>
+        <span class="to"> until </span>
+        <span class="the"> the </span>
+        <span class="color-scheme">
+            <br> <!-- Line break added here -->
+            <span class="days">2</span>
+            <span class="hours">0</span>
+            <span class="and">2</span>
+            <span class="minutes">6</span> 
+            <span class="to">F</span>
+            <span class="the">I</span>
+            <span class="days">F</span>
+            <span class="hours">A</span> 
+            <span class="and">W</span>
+            <span class="minutes">o</span>
+            <span class="to">r</span>
+            <span class="the">l</span>
+            <span class="days">d</span> 
+            <span class="hours">C</span>
+            <span class="and">u</span>
+            <span class="minutes">p</span>
+        </span>
+    </h1>
+    
+</div>
+
+<div class="container user-post-2 box-outline-2 d-flex justify-content-center align-items-center">
+    <h1> 
+        <span class="days">The </span>
+        <span class="hours">World </span>
+        <span class="and"> is </span>
+        <span class="minutes">coming </span>
+        <span class="to"> to </span>
+        <span class="days">The </span>
+        <span class="hours">United </span>
+        <span class="and"> States </span>
+        <span class="minutes">in </span>
+        <span class="to"> 2026, </span>
+        <span class="hours">are </span>
+        <span class="and"> you </span>
+        <span class="minutes">ready?</span>
+
+
+
+
+</h1>
 </div>
 
 {% endblock %}

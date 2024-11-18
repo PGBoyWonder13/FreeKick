@@ -9,15 +9,17 @@
   <p></p>
   <a class="post-header" href="https://www.linkedin.com/in/data-analyst-pasi-gonese/">
     <span class="proj">President and Founder of FreeKick: Pasi Gonese </span> </a>
+    <p></p>
+    <p><span class="proj">"Count your days so you can make them count" - Pasi </span></p>
 </div>
 
 
 </div>
 <div class="col-md-6">
   <div class="rules box-outline-2">
-    <h2 class="rules-title">Would you like to join??</h2>
+    <h2 class="rules-title">Would you like to join our club?</h2>
     <div class="rules-info">
-      Please complete the form below and a team member will be in contact with you.</p>
+      Please complete the form below and a team member will be in contact with you. Please indicate if you are interested in an office role.</p>
       <form method="POST" action="{{ url_for('contact') }}">
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
@@ -28,11 +30,23 @@
             <input type="email" class="form-control" id="email" name="email" required>
         </div>
         <div class="mb-3">
+            <label for="office_role" class="form-label">Office Role</label>
+            <select class="form-select" id="office_role" name="office_role" required>
+                <option value="" disabled selected>Select an office role</option>
+                <option value="Secretary">Secretary</option>
+                <option value="Treasurer">Treasurer</option>
+                <option value="Sergeant at Arms">Sergeant at Arms</option>
+                <option value="Media & Public Relations Chair">Media & Public Relations Chair</option>
+                <option value="Membership and Chief of Recruitment Chair">Membership and Chief of Recruitment Chair</option>
+                <option value="No Office Role">No Office Role</option>
+            </select>
+        </div>
+        <div class="mb-3">
             <label for="comments" class="form-label">Comments</label>
             <textarea class="form-control" id="comments" name="comments" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    </form>    
     </div>
   </div>
 </div>
@@ -44,6 +58,8 @@
     <img class=" img-fluid" src="static/imgs/maraz.jpeg" alt="People">
     <p></p>
     <a class="post-header"><span class="proj">Vice-President of FreeKick: Simba Maravanyika </span> </a>
+    <p></p>
+    <p><span class="proj">"Always happy to help" - Simba </span></p>
   </div>
   <p></p>
   <p></p>
