@@ -946,41 +946,26 @@ h1 {
         opacity: 0;
         transform: translateY(20px);
     }
-    50% {
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
-    100% {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
 }
 
-/* Apply animation to all spans with a delay */
-.container .animate-text {
+.container .animate-text.visible {
+    animation: fadeSlide 20s ease-out forwards; /* Trigger animation when the 'visible' class is added */
     display: inline-block;
     font-size: 2rem;
-    animation: fadeSlide 10s ;
-    margin-right: 5px; /* Add spacing between words */
+    animation: fadeSlide 1s ease-out forwards; /* Standard animation */
+    opacity: 0; /* Start invisible */
+    margin-right: 5px; /* Space between words */
 }
 
-/* Add delay to each word for sequential animation */
-.container .days {
-    animation-delay: 0s;
-}
-
-.container .hours {
-    animation-delay: 0.2s;
-}
-
-.container .and {
-    animation-delay: 0.4s;
-}
-
-.container .minutes {
-    animation-delay: 0.6s;
-}
-
-.container .to {
-    animation-delay: 0.8s;
+video {
+    max-width: 100%; /* Ensures the video scales down to fit its container */
+    height: auto; /* Maintains the aspect ratio */
+    border: 2px solid lime; /* Optional: Matches the green outline in your design */
+    border-radius: 4px; /* Optional: Smoothens the corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Adds shadow like in .box-outline */
+    display: block; /* Removes any extra space below the video */
 }
