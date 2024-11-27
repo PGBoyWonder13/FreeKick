@@ -151,6 +151,29 @@ body.dark {
     padding: 20px;
 }
 
+.box-outline-6 {
+    font-family: 'Inter', sans-serif;
+    -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    background: radial-gradient(circle at 100% 100%, var(--background-highlight) 0, var(--background-highlight) 6px, transparent 6px) 0% 0%/8px 8px no-repeat,
+                radial-gradient(circle at 0 100%, var(--background-highlight) 0, var(--background-highlight) 6px, transparent 6px) 100% 0%/8px 8px no-repeat,
+                radial-gradient(circle at 100% 0, var(--background-highlight) 0, var(--background-highlight) 6px, transparent 6px) 0% 100%/8px 8px no-repeat,
+                radial-gradient(circle at 0 0, var(--background-highlight) 0, var(--background-highlight) 6px, transparent 6px) 100% 100%/8px 8px no-repeat,
+                linear-gradient(var(--background-highlight), var(--background-highlight)) 50% 50%/calc(100% - 4px) calc(100% - 16px) no-repeat,
+                linear-gradient(var(--background-highlight), var(--background-highlight)) 50% 50%/calc(100% - 16px) calc(100% - 4px) no-repeat,
+                linear-gradient(135deg, transparent 30%, #00da28 100%);
+    border-radius: 4px;
+    padding: 0px;
+    box-sizing: border-box;
+
+    /* Explicit positioning */
+    position: absolute; /* Set position to absolute */
+    top: 400px; /* Move upward (adjust as needed) */
+    left: 0.8%; /* Move left (adjust as needed) */
+}
+
+
 h1 {
         font-size: 1.5rem; /* Reduced from 2rem to 1.5rem */
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -591,6 +614,7 @@ h1 {
 .accordion-body {
     background: var(--background-highlight);
     color: var(--text-body);
+    overflow: hidden;
 }
 
 .accordion-button::after {
@@ -817,6 +841,7 @@ h1 {
     font-family: 'Poppins', sans-serif;
     border-radius: 8px;
     padding: 17px;
+    min-height: 300px; 
 }
 
 .faq .faq-title-container 
